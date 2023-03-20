@@ -1,11 +1,6 @@
 import React from "react";
-import "./App.css";
-import AppRouter from "./components/AppRouter";
+import { Theme, presetGpnDisplay } from "@consta/uikit/Theme";
 
 export default function App() {
-  return (
-    <div>
-      <AppRouter />
-    </div>
-  );
+  return <Theme preset={presetGpnDisplay}></Theme>;
 }
