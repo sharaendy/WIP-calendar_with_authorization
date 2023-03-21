@@ -4,10 +4,13 @@ import { IconUser } from "@consta/icons/IconUser";
 import { IconExit } from "@consta/icons/IconExit";
 import { useHistory } from "react-router-dom";
 import { RoutesName } from "../../router";
+import { UseTypedSelector } from "../../hooks/useTypedSelector";
 
 const Navbar: React.FC = () => {
   const history = useHistory();
-  const isUserAuthorized = true;
+  const isUserAuthorized = UseTypedSelector(
+    (state) => state.authReducer.isAuth
+  );
 
   const userAuthorized = (
     <Header

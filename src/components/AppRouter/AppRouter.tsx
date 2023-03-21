@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { privetRoutes, publicRoutes, RoutesName } from "../../router";
+import { UseTypedSelector } from "../../hooks/useTypedSelector";
 
 const authorizedUser = (
   <Switch>
@@ -21,8 +22,9 @@ const notAuthorizedUser = (
 );
 
 const AppRouter = () => {
-  const isUserAuthorized = true;
-
+  const isUserAuthorized = UseTypedSelector(
+    (state) => state.authReducer.isAuth
+  );
   return isUserAuthorized ? authorizedUser : notAuthorizedUser;
 };
 
