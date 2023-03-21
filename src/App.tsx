@@ -1,11 +1,15 @@
 import React from "react";
-import "./App.css";
-import AppRouter from "./components/AppRouter";
+import { Theme, presetGpnDefault } from "@consta/uikit/Theme";
+import AppRouter from "./components/AppRouter/AppRouter";
+import Navbar from "./components/Navbar/Navbar";
 
 export default function App() {
   return (
     <div>
-      <AppRouter />
+      <Theme preset={presetGpnDefault}>
+        <Navbar />
+        <AppRouter />
+      </Theme>
     </div>
   );
 }
